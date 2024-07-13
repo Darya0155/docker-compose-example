@@ -2,7 +2,7 @@ version : '3.2'
 
 services:
   db:
-    image: mysql
+    image: mysql:8.0
     mem_limit: 500m
     ports:
       - "3306:3306"
@@ -10,6 +10,9 @@ services:
       - arya-docker-network
     environment:
       MYSQL_ROOT_PASSWORD: admin
+      MYSQL_DATABASE: 'db'
+      MYSQL_USER: 'user'
+      MYSQL_PASSWORD: 'password'      
 
 network:
   arya-docker-network:

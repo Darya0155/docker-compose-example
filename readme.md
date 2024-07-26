@@ -8,7 +8,7 @@ docker network create -d bridge arya-docker-network
 docker-compose -f mysql/mysql-docker-compose.yml up
 ```
 
-## create mysql container
+## create sonar container
 ```bash
-docker-compose -f kafka/kafka-docker-compose.yml up
+docker-compose -f sonarqube/sonar-docker-compose.yml up
 ```

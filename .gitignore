@@ -1,0 +1,3 @@
+/mysql/mysqlBackup/*
+/hostingerSetup/mysqlBackup/*
+/hostingerSetup/rootLogs/*

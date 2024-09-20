@@ -1,0 +1,35 @@
+version : '3.2'
+
+services:
+  # db:
+  #   image: mysql:8.0
+  #   mem_limit: 500m
+  #   ports:
+  #     - "3306:3306"
+  #   volumes:
+  #     - ./mysqlBackup:/var/lib/mysql
+  #   networks:
+  #     - arya-docker-network
+  #   environment:
+  #     MYSQL_ROOT_PASSWORD: admin
+  #     MYSQL_DATABASE: 'db'
+  #     MYSQL_USER: 'user'
+  #     MYSQL_PASSWORD: 'password'      
+  root-app:
+    image: arya786/todohostinger:0.0.1
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./rootLogs:/log:rw+
+    networks:
+      - arya-docker-network
+    # depends_on:
+    #   - db
+    environment:
+      SPRING_DATASOURCE_URL: 'jdbc:mysql://db:3306/db'
+      SPRING_DATASOURCE_USERNAME: 'root'
+      SPRING_DATASOURCE_PASSWORD: 'admin'
+
+networks:
+  arya-docker-network:
+    external: true

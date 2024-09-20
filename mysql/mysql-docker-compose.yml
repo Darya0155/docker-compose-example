@@ -6,6 +6,8 @@ services:
     mem_limit: 500m
     ports:
       - "3306:3306"
+    volumes:
+      - ./mysqlBackup:/var/lib/mysql
     networks:
       - arya-docker-network
     environment:
